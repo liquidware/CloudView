@@ -184,7 +184,7 @@ public class CloudViewActivity extends Activity implements Event {
             mIsUpdating = true;
             URL url;
             try {
-                url = new URL("http", "ec2-50-19-144-125.compute-1.amazonaws.com", 80,
+                url = new URL("http", "liquidwarecs.com", 80,
                         "/adverts/1.json");
                 Log.d(TAG, "Reading " + url);
 
@@ -198,7 +198,7 @@ public class CloudViewActivity extends Activity implements Event {
                     ResponseData r = gson.fromJson(reader, ResponseData.class);
                     Log.d(TAG, "source_url=" + r.asset.source_url);
                     Bitmap image = BitmapFactory.decodeStream(new URL("http",
-                            "ec2-50-19-144-125.compute-1.amazonaws.com", 80, r.asset.source_url)
+                            "liquidwarecs.com", 80, r.asset.source_url)
                             .openConnection().getInputStream());
                     mImages[i] = image;
                     mNotifier.onRemoteAssetUpdated(i, image);
