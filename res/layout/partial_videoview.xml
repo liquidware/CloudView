@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+  
+          http://www.apache.org/licenses/LICENSE-2.0
+  
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<!-- This file describes the layout of the main SkeletonApp activity
+     user interface.
+ -->
+
+<!-- The top view is a layout manager that places its child views into
+     a row, here set to be vertical (so the first is at the top) -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="@color/white">
+
+    <!-- First view is a text editor.  We want it to use all available
+         horizontal space, and stretch to fill whatever vertical space
+         is available to it.  Note the use of the "id" attribute, which
+         allows us to find this object from the Java code. -->
+
+    <!-- Next view is another linear layout manager, now horizontal.  We
+         give it a custom background; see colors.xml for the definition
+         of drawable/semi_black-->
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="How to setup direct deposit"
+        android:textAppearance="?android:attr/textAppearanceLarge" android:textColor="@color/med_blue" android:layout_marginTop="10dip"/>
+
+    <LinearLayout
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:layout_gravity="center_vertical" android:gravity="left"
+        android:orientation="horizontal" android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" android:gravity="top|center_horizontal">
+
+            <VideoView
+                android:id="@+id/myvideoview"
+                android:layout_width="480dip"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+        
+        <!-- On the left: the "back" button.  See styles.xml for the
+             definition of style/ActionButton, which we use to hold
+             common attributes that are used for both this and the
+             clear button.  See strings.xml for the definition of
+             string/back. -->
+
+        <LinearLayout
+            android:layout_width="225dip"
+            android:layout_height="fill_parent"
+            android:background="@color/white"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/TextView01"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:text="Open a debit account"
+                android:textColor="@color/med_blue" />
+
+            <ImageButton
+                android:id="@+id/ImageButton1"
+                android:layout_width="200dip"
+                android:layout_height="175dip"
+                android:background="@color/white"
+                android:scaleType="centerInside"
+                android:src="@drawable/checking_icon" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/TextView02"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:text="Compare Mortgage rates"
+                    android:textColor="@color/med_blue" />
+
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/ImageButton2"
+                android:layout_width="200dip"
+                android:layout_height="175dip"
+                android:background="@color/white"
+                android:scaleType="centerInside"
+                android:src="@drawable/mortgage_icon" />
+        </LinearLayout>
+
+        <!-- In the middle: a custom image, -->
+
+        <!-- On the right: another button, this time with its text color
+             changed to red.  Again, see colors.xml for the definition. -->
+
+    </LinearLayout>
+
+</LinearLayout>
+
+
